@@ -1,0 +1,365 @@
+/* ============================
+   VARIABLES & RESET
+   ============================ */
+:root {
+  --dark-bg: #0a0a0f;
+  --light-bg: #ffffff;
+  --text-dark: #0e0e0e;
+  --text-light: #f0ede8;
+  --pill-active: #2a1f4e;
+  --font: 'Inter', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); -webkit-font-smoothing: antialiased; background: var(--dark-bg); }
+img { display: block; width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; }
+
+/* ============================
+   SECTIONS
+   ============================ */
+.portfolio-section { display: none; }
+.portfolio-section.active { display: block; }
+.section-dark { background: var(--dark-bg); color: var(--text-light); }
+.section-light { background: var(--light-bg); color: var(--text-dark); }
+
+/* ============================
+   BG IMAGE
+   ============================ */
+.bg-image {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* ============================
+   HEADER
+   Total: 478px
+   Email bar: 40px (más compacta)
+   Nav zone: 200px
+   Contenido: resto
+   Padding lateral: 70px
+   ============================ */
+.section-header {
+  width: 100%;
+  height: 478px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Email/ArtStation bar — compacta */
+.header-top-bar,
+.header-email-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 70px;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.header-top-bar {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.section-dark .header-email-row,
+.section-dark .header-top-bar {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.header-email-row {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.header-email-bar { font-weight: 500; }
+.header-email-bar a,
+.artstation-link { font-weight: 600; transition: opacity 0.2s; }
+.header-email-bar a:hover,
+.artstation-link:hover { opacity: 0.7; }
+
+/* Split layout — contenido principal */
+.header-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 2.5rem 70px;
+  gap: 3rem;
+}
+
+.header-left-block { flex: 1; }
+
+.header-right-block {
+  flex: 0 0 380px;
+}
+
+/* Nav zone */
+.nav-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+/* ============================
+   NAV PILLS — sliding indicator
+   ============================ */
+.nav-pills {
+  position: relative;
+  display: inline-flex;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 100px;
+  padding: 7px;
+  gap: 4px;
+  min-width: 576px;
+}
+
+.section-light .nav-pills {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.14);
+}
+
+/* Sliding indicator */
+.nav-pills .slider {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: calc(100% - 14px);
+  background: var(--pill-active);
+  border-radius: 100px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nav-pill {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.7rem 2rem;
+  border-radius: 100px;
+  transition: color 0.2s, opacity 0.2s;
+  color: inherit;
+  opacity: 0.55;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  background: transparent;
+}
+
+.nav-pill:hover { opacity: 0.85; }
+
+.nav-pill.nav-active {
+  color: #fff;
+  opacity: 1;
+}
+
+/* ============================
+   HERO NAME & TAGLINE
+   ============================ */
+.hero-name {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-name.large {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.hero-tagline {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.tagline-small {
+  font-size: 0.95rem;
+  font-weight: 400;
+  opacity: 0.65;
+  margin-bottom: 0.5rem;
+}
+
+.tagline-small strong { font-weight: 700; opacity: 1; }
+.tagline-dash { margin-right: 0.4rem; opacity: 0.4; }
+
+.header-divider-line {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.35;
+  margin-bottom: 0.9rem;
+}
+
+.bio-text {
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.75;
+  opacity: 0.7;
+}
+
+/* ============================
+   IMAGES STACK
+   ============================ */
+.images-stack { display: flex; flex-direction: column; }
+.dark-bg { background: transparent; }
+.light-bg { background: var(--light-bg); }
+
+.image-item { overflow: hidden; position: relative; }
+.image-item img { width: 100%; height: auto; display: block; }
+
+/* Centradas con padding lateral */
+.centered-img {
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.centered-img img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================
+   PROTOTYPE BUTTON
+   Centrado debajo del "Thank you"
+   que está en la mitad derecha de la slide
+   ============================ */
+.prototype-slide { position: relative; }
+
+.prototype-btn-wrapper {
+  position: absolute;
+  bottom: 20%;
+  left: 75%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.prototype-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: var(--font);
+  color: var(--text-dark);
+  border: 1.5px solid rgba(0,0,0,0.25);
+  border-radius: 100px;
+  padding: 0.65rem 1.4rem;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(8px);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.prototype-btn:hover {
+  background: #fff;
+  border-color: rgba(0,0,0,0.45);
+  transform: translateY(-2px);
+}
+
+.prototype-btn:active {
+  transform: scale(0.97);
+  background: #f0f0f0;
+}
+
+.prototype-arrow { transition: transform 0.2s; }
+.prototype-btn:hover .prototype-arrow { transform: translateX(3px); }
+
+/* ============================
+   FOOTER
+   Mismo espaciado que header
+   ============================ */
+.section-footer { width: 100%; }
+
+.footer-main.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 70px;
+}
+
+.footer-main .hero-name {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-main .hero-tagline { margin-bottom: 1.5rem; }
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 70px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.footer-bottom-bar a { font-weight: 600; transition: opacity 0.2s; }
+.footer-bottom-bar a:hover { opacity: 0.7; }
+
+.section-light .footer-bottom-bar {
+  border-top-color: rgba(0,0,0,0.1);
+}
+
+/* ============================
+   FADE IN
+   ============================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.portfolio-section.active .section-header {
+  animation: fadeUp 0.4s ease forwards;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 900px) {
+  .section-header { height: auto; }
+
+  .header-top-bar,
+  .header-email-row,
+  .footer-bottom-bar { padding: 0 1.5rem; height: auto; padding-top: 0.6rem; padding-bottom: 0.6rem; }
+
+  .header-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .header-right-block { flex: 1; }
+
+  .nav-pills { min-width: unset; width: 90%; }
+
+  .nav-row { height: auto; padding: 1.5rem; }
+
+  .footer-main.centered { padding: 2rem 1.5rem; }
+
+  .artstation-link { display: none; }
+
+  .prototype-btn-wrapper { bottom: 1rem; left: 50%; }
+}
