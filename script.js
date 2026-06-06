@@ -8,7 +8,18 @@ function updateSlider(navEl) {
     slider.className = 'slider';
     navEl.prepend(slider);
   }
+ const activePill = navEl.querySelector('.nav-pill.nav-active');
+  if (!activePill) return;
 
+  const navLeft = navEl.getBoundingClientRect().left;
+  const pillRect = activePill.getBoundingClientRect();
+
+  slider.style.width = pillRect.width + 'px';
+  slider.style.left = (pillRect.left - navLeft) + 'px';
+  slider.style.transform = 'none';
+}
+Y en style.css buscá .nav-pills .slider y asegurate que tenga transition en left también:
+csstransition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);Sonnet 4.6 Low
   const activePill = navEl.querySelector('.nav-pill.nav-active');
   if (!activePill) return;
 
