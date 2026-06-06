@@ -15,7 +15,8 @@ function updateSlider(navEl) {
   const pillRect = activePill.getBoundingClientRect();
 
   slider.style.width = pillRect.width + 'px';
-  slider.style.transform = `translateX(${pillRect.left - navRect.left - 7}px)`;
+  slider.style.left = '7px';
+slider.style.transform = `translateX(${pillRect.left - navRect.left}px)`;
 }
 
 function switchSection(target) {
