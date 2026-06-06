@@ -49,7 +49,7 @@ a { text-decoration: none; color: inherit; }
    ============================ */
 .section-header {
   width: 100%;
-  height: 717px;
+  height: 618px;
   display: flex;
   flex-direction: column;
 }
@@ -251,8 +251,8 @@ a { text-decoration: none; color: inherit; }
 
 .prototype-btn-wrapper {
   position: absolute;
-  bottom: 15%;
-  left: 80%;
+  bottom: 13%;
+  left: 79%;
   transform: translateX(-50%);
   width: auto;
 }
