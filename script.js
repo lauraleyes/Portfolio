@@ -11,11 +11,11 @@ function updateSlider(navEl) {
   const activePill = navEl.querySelector('.nav-pill.nav-active');
   if (!activePill) return;
 
-  const navLeft = navEl.getBoundingClientRect().left;
+  const navRect = navEl.getBoundingClientRect();
   const pillRect = activePill.getBoundingClientRect();
 
   slider.style.width = pillRect.width + 'px';
-  slider.style.transform = `translateX(${pillRect.left - navLeft - 7}px)`;;
+  slider.style.transform = `translateX(${pillRect.left - navRect.left - 7}px)`;
 }
 
 function switchSection(target) {
