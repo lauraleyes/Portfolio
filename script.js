@@ -1,43 +1,26 @@
-// ============================
-// SLIDING INDICATOR
-// ============================
-function initSlider(navEl) {
-  const pills = navEl.querySelectorAll('.nav-pill');
+const sectionMap = { '3d': 'section-3d', '2d': 'section-2d', 'uxui': 'section-uxui' };
+
+// Move slider to active pill
+function updateSlider(navEl) {
   let slider = navEl.querySelector('.slider');
   if (!slider) {
     slider = document.createElement('div');
     slider.className = 'slider';
-    navEl.insertBefore(slider, navEl.firstChild);
+    navEl.prepend(slider);
   }
 
-  function moveSlider(activePill) {
-    const navRect = navEl.getBoundingClientRect();
-    const pillRect = activePill.getBoundingClientRect();
-    slider.style.width = pillRect.width + 'px';
-    slider.style.transform = `translateX(${pillRect.left - navRect.left - 7}px)`;
-  }
-
-  // Init position
   const activePill = navEl.querySelector('.nav-pill.nav-active');
-  if (activePill) {
-    // No transition on first render
-    slider.style.transition = 'none';
-    moveSlider(activePill);
-    setTimeout(() => {
-      slider.style.transition = '';
-    }, 50);
-  }
+  if (!activePill) return;
 
-  return moveSlider;
+  const navRect = navEl.getBoundingClientRect();
+  const pillRect = activePill.getBoundingClientRect();
+
+  slider.style.width = pillRect.width + 'px';
+  slider.style.transform = `translateX(${pillRect.left - navRect.left - 7}px)`;
 }
 
-// ============================
-// SECTION SWITCHING
-// ============================
-const sectionMap = { '3d': 'section-3d', '2d': 'section-2d', 'uxui': 'section-uxui' };
-
 function switchSection(target) {
-  // Hide all
+  // Hide all sections
   document.querySelectorAll('.portfolio-section').forEach(s => s.classList.remove('active'));
 
   // Show target
@@ -47,22 +30,18 @@ function switchSection(target) {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
-  // Update all nav pills
+  // Update pill states
   document.querySelectorAll('.nav-pill').forEach(p => {
     p.classList.toggle('nav-active', p.dataset.target === target);
-    if (p.classList.contains('nav-active')) {
-      p.style.color = '';
-    }
   });
 
-  // Move all sliders
-  document.querySelectorAll('.nav-pills').forEach(nav => {
-    const active = nav.querySelector('.nav-pill.nav-active');
-    if (active) initSlider(nav)(active);
+  // Update all sliders after layout settles
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.nav-pills').forEach(nav => updateSlider(nav));
   });
 }
 
-// Attach click events
+// Click events
 document.querySelectorAll('.nav-pill').forEach(pill => {
   pill.addEventListener('click', e => {
     e.preventDefault();
@@ -70,5 +49,18 @@ document.querySelectorAll('.nav-pill').forEach(pill => {
   });
 });
 
-// Init on load
+// Init — disable transition on first render, then enable
+document.querySelectorAll('.nav-pills .slider').forEach(s => {
+  s.style.transition = 'none';
+});
+
 switchSection('3d');
+
+// Re-enable transitions after first paint
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.nav-pills .slider').forEach(s => {
+      s.style.transition = '';
+    });
+  });
+});
