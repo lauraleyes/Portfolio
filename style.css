@@ -42,14 +42,14 @@ a { text-decoration: none; color: inherit; }
 
 /* ============================
    HEADER
-   Total: 856px (doble espacio vertical)
+   Total: 956px (doble espacio vertical)
    Email bar: 40px
    Nav zone: 200px
    Padding lateral: 70px
    ============================ */
 .section-header {
   width: 100%;
-  height: 618px;
+  height: 717px;
   display: flex;
   flex-direction: column;
 }
@@ -137,7 +137,7 @@ a { text-decoration: none; color: inherit; }
   height: calc(100% - 14px);
   background: var(--pill-active);
   border-radius: 100px;
-  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
   z-index: 0;
   will-change: transform, width;
@@ -220,7 +220,7 @@ a { text-decoration: none; color: inherit; }
 /* ============================
    IMAGES STACK
    ============================ */
-.images-stack { display: flex; flex-direction: column; gap: 1rem; }
+.images-stack { display: flex; flex-direction: column; }
 .dark-bg { background: transparent; }
 .light-bg { background: var(--light-bg); }
 
@@ -251,8 +251,8 @@ a { text-decoration: none; color: inherit; }
 
 .prototype-btn-wrapper {
   position: absolute;
-  bottom: 13%;
-  left: 79%;
+  bottom: 15%;
+  left: 80%;
   transform: translateX(-50%);
   width: auto;
 }
@@ -312,7 +312,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 70px;
+  padding: 20px 70px;
   border-top: 1px solid rgba(255,255,255,0.1);
   border-bottom: 1px solid rgba(255,255,255,0.1);
   font-size: 0.95rem;
@@ -353,7 +353,7 @@ a { text-decoration: none; color: inherit; }
   .header-top-row {
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem 1.5rem 3rem;
+    padding: 2rem 1.5rem 1rem;
     gap: 1.5rem;
   }
 
@@ -367,5 +367,5 @@ a { text-decoration: none; color: inherit; }
 
   .artstation-link { display: none; }
 
-  .prototype-btn-wrapper { bottom: 3%; left: 55%; }
+  .prototype-btn-wrapper { bottom: 5%; left: 60%; }
 }
