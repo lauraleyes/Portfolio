@@ -31,9 +31,9 @@ function switchSection(target) {
     p.classList.toggle('nav-active', p.dataset.target === target);
   });
 
-  requestAnimationFrame(() => {
+  setTimeout(() => {
     document.querySelectorAll('.nav-pills').forEach(nav => updateSlider(nav));
-  });
+  }, 50);;
 }
 
 document.querySelectorAll('.nav-pill').forEach(pill => {
