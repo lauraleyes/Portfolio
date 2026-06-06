@@ -42,7 +42,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ============================
    HEADER
-   Total: 956px (doble espacio vertical)
+   Total: 856px (doble espacio vertical)
    Email bar: 40px
    Nav zone: 200px
    Padding lateral: 70px
@@ -351,7 +351,7 @@ a { text-decoration: none; color: inherit; }
   .header-top-row {
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem 1.5rem 1rem;
+    padding: 2rem 1.5rem 3rem;
     gap: 1.5rem;
   }
 
@@ -365,5 +365,5 @@ a { text-decoration: none; color: inherit; }
 
   .artstation-link { display: none; }
 
-  .prototype-btn-wrapper { bottom: 5%; left: 60%; }
+  .prototype-btn-wrapper { bottom: 3%; left: 55%; }
 }
