@@ -35,7 +35,7 @@ a { text-decoration: none; color: inherit; }
 
 /* 3D background at 80% size */
 #section-3d {
-  background-size: 80%;
+  background-size: 100%;
   background-position: center top;
   background-repeat: no-repeat;
 }
@@ -137,7 +137,7 @@ a { text-decoration: none; color: inherit; }
   height: calc(100% - 14px);
   background: var(--pill-active);
   border-radius: 100px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: none;
   pointer-events: none;
   z-index: 0;
   will-change: transform, width;
@@ -233,18 +233,22 @@ a { text-decoration: none; color: inherit; }
 .images-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  padding: 8px;
+  gap: 16px;
+  padding: 24px;
+  align-items: center;
 }
 
 .images-grid .image-item {
   cursor: pointer;
   overflow: hidden;
   background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .images-grid .image-item img {
-  width: 100%;
+  width: 75%;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease, opacity 0.3s ease;

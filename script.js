@@ -1,24 +1,6 @@
 const sectionMap = { '3d': 'section-3d', '2d': 'section-2d', 'uxui': 'section-uxui' };
 
 // ============================
-// SLIDING INDICATOR
-// ============================
-function updateSlider(navEl) {
-  let slider = navEl.querySelector('.slider');
-  if (!slider) {
-    slider = document.createElement('div');
-    slider.className = 'slider';
-    navEl.prepend(slider);
-  }
-  const activePill = navEl.querySelector('.nav-pill.nav-active');
-  if (!activePill) return;
-  const navRect = navEl.getBoundingClientRect();
-  const pillRect = activePill.getBoundingClientRect();
-  slider.style.width = pillRect.width + 'px';
-  slider.style.transform = `translateX(${pillRect.left - navRect.left - 7}px)`;
-}
-
-// ============================
 // SECTION SWITCHING
 // ============================
 function switchSection(target) {
@@ -31,9 +13,6 @@ function switchSection(target) {
   document.querySelectorAll('.nav-pill').forEach(p => {
     p.classList.toggle('nav-active', p.dataset.target === target);
   });
-  setTimeout(() => {
-    document.querySelectorAll('.nav-pills').forEach(nav => updateSlider(nav));
-  }, 50);
 }
 
 document.querySelectorAll('.nav-pill').forEach(pill => {
@@ -93,7 +72,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') showNext();
 });
 
-// Attach click to grid images
 function initGridLightbox() {
   document.querySelectorAll('.images-grid').forEach(grid => {
     const items = Array.from(grid.querySelectorAll('.image-item img'));
