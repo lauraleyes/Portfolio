@@ -22,7 +22,7 @@ a { text-decoration: none; color: inherit; }
 .portfolio-section { display: none; }
 .portfolio-section.active { display: block; }
 .section-dark { background: var(--dark-bg); color: var(--text-light); }
-.section-light { background: var(--light-bg); color: var(--text-dark); }
+.section-light { background: transparent; color: var(--text-dark); }
 
 /* ============================
    BG IMAGE
@@ -223,7 +223,7 @@ a { text-decoration: none; color: inherit; }
    ============================ */
 .images-stack { display: flex; flex-direction: column; gap: 0; }
 .dark-bg { background: transparent; }
-.light-bg { background: var(--light-bg); }
+.light-bg { background: transparent; }
 
 .image-item { overflow: hidden; position: relative; }
 .image-item img { width: 100%; height: auto; display: block; }
