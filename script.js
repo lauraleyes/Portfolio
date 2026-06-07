@@ -44,22 +44,31 @@ function openLightbox(images, index) {
 
 function closeLightbox() {
   lightbox.classList.remove('open');
+  lightboxImg.classList.remove('zoomed');
   document.body.style.overflow = '';
 }
 
 function showPrev() {
   currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
   lightboxImg.src = currentImages[currentIndex];
+  lightboxImg.classList.remove('zoomed');
 }
 
 function showNext() {
   currentIndex = (currentIndex + 1) % currentImages.length;
   lightboxImg.src = currentImages[currentIndex];
+  lightboxImg.classList.remove('zoomed');
 }
 
 lightboxClose.addEventListener('click', closeLightbox);
 lightboxPrev.addEventListener('click', showPrev);
 lightboxNext.addEventListener('click', showNext);
+
+// Zoom on click
+lightboxImg.addEventListener('click', e => {
+  e.stopPropagation();
+  lightboxImg.classList.toggle('zoomed');
+});
 
 lightbox.addEventListener('click', e => {
   if (e.target === lightbox) closeLightbox();
