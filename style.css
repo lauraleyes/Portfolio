@@ -35,7 +35,7 @@ a { text-decoration: none; color: inherit; }
 
 /* 3D background at 80% size */
 #section-3d {
-  background-size: 100%;
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
 }
@@ -163,6 +163,7 @@ a { text-decoration: none; color: inherit; }
 .nav-pill:hover { opacity: 0.85; }
 
 .nav-pill.nav-active {
+  background: var(--pill-active);
   color: #fff;
   opacity: 1;
 }
@@ -231,31 +232,29 @@ a { text-decoration: none; color: inherit; }
    GRID — 3D y 2D en 3 columnas
    ============================ */
 .images-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding: 24px;
-  align-items: center;
+  columns: 3;
+  column-gap: 6px;
+  padding: 6px;
 }
 
 .images-grid .image-item {
   cursor: pointer;
   overflow: hidden;
   background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  break-inside: avoid;
+  margin-bottom: 6px;
+  display: block;
 }
 
 .images-grid .image-item img {
-  width: 75%;
+  width: 100%;
   height: auto;
+  display: block;
   object-fit: contain;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .images-grid .image-item:hover img {
-  transform: scale(1.05);
   opacity: 0.85;
 }
 
