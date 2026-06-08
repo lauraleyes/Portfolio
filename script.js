@@ -39,32 +39,39 @@ function openLightbox(images, index) {
   currentIndex = index;
   lightboxImg.src = images[index];
   lightbox.classList.add('open');
+  lightbox.classList.remove('zoomed');
   document.body.style.overflow = 'hidden';
 }
 
 function closeLightbox() {
-  lightbox.classList.remove('open');
+  lightbox.classList.remove('open', 'zoomed');
   document.body.style.overflow = '';
 }
 
 function showPrev() {
   currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
   lightboxImg.src = currentImages[currentIndex];
+  lightbox.classList.remove('zoomed');
 }
 
 function showNext() {
   currentIndex = (currentIndex + 1) % currentImages.length;
   lightboxImg.src = currentImages[currentIndex];
+  lightbox.classList.remove('zoomed');
 }
 
 lightboxClose.addEventListener('click', closeLightbox);
 lightboxPrev.addEventListener('click', showPrev);
 lightboxNext.addEventListener('click', showNext);
 
-// Click en imagen abre en pestaña nueva a tamaño completo
+// Zoom toggle
 lightboxImg.addEventListener('click', e => {
   e.stopPropagation();
-  window.open(currentImages[currentIndex], '_blank');
+  lightbox.classList.toggle('zoomed');
+  // Scroll to top when zooming in
+  if (lightbox.classList.contains('zoomed')) {
+    lightbox.scrollTo(0, 0);
+  }
 });
 
 lightbox.addEventListener('click', e => {
