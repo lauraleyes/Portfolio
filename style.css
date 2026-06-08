@@ -256,7 +256,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .images-grid .image-item:hover img {
-  opacity: 0.85;
+  opacity: 0.85;    
+  transform: scale(1.05);
 }
 
 /* ============================
@@ -270,7 +271,7 @@ a { text-decoration: none; color: inherit; }
   z-index: 1000;
   align-items: center;
   justify-content: center;
-  overflow: auto;
+  overflow: ;
 }
 
 .lightbox.open {
@@ -282,15 +283,16 @@ a { text-decoration: none; color: inherit; }
   max-height: 95vh;
   object-fit: contain;
   border-radius: 4px;
-  cursor: zoom-in;
-  transition: transform 0.3s ease;
+  cursor: default;
 }
 
 .lightbox-img.zoomed {
   max-width: none;
   max-height: none;
   cursor: zoom-out;
-  transform: scale(1);
+  transform: scale(2);
+  transform-origin: center center;
+}
 }
 
 .lightbox-close {
