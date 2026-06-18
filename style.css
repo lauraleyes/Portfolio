@@ -33,7 +33,7 @@ a { text-decoration: none; color: inherit; }
   background-repeat: no-repeat;
 }
 
-/* 3D background at 80% size */
+/* 3D background at 100% size */
 #section-3d {
   background-size: cover;
   background-position: center top;
