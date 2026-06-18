@@ -232,18 +232,18 @@ a { text-decoration: none; color: inherit; }
    GRID — 3D y 2D en 3 columnas
    ============================ */
 .images-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  columns: 3;
+  column-gap: 6px;
   padding: 6px;
   margin: 0 5%;
-  align-items: start;
 }
 
 .images-grid .image-item {
   cursor: pointer;
   overflow: hidden;
   background: transparent;
+  break-inside: avoid;
+  margin-bottom: 6px;
   display: block;
 }
 
@@ -257,6 +257,7 @@ a { text-decoration: none; color: inherit; }
 
 .images-grid .image-item:hover img {
   opacity: 0.85;
+  transform: scale(1.05);
 }
 
 /* ============================
