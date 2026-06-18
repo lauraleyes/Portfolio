@@ -481,7 +481,7 @@ a { text-decoration: none; color: inherit; }
   padding: 2rem 70px 0;
   display: flex;
   flex-direction: column;
-  min-height: 618px;
+  min-height: 480px;
 }
 
 .new-header-top {
@@ -513,18 +513,18 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.85rem;
   font-weight: 400;
   color: var(--text-light);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(124,111,208,0.5);
   border-radius: 100px;
   padding: 0.5rem 1.2rem;
-  transition: border-color 0.2s, opacity 0.2s;
+  transition: border-color 0.2s, color 0.2s;
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
 .artstation-btn:hover {
-  border-color: rgba(255,255,255,0.5);
-  opacity: 0.9;
+  border-color: #7c6fd0;
+  color: #7c6fd0;
 }
 
 .new-header-content {
@@ -548,9 +548,9 @@ a { text-decoration: none; color: inherit; }
   font-family: 'Cormorant Garamond', 'Georgia', serif;
   font-size: clamp(5rem, 12vw, 10rem);
   font-weight: 300;
-  line-height: 0.9;
+  line-height: 0.82;
   letter-spacing: -0.01em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .name-light {
@@ -567,7 +567,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.75;
   color: rgba(240,237,232,0.65);
   max-width: 480px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .new-email-row {
@@ -602,4 +602,49 @@ a { text-decoration: none; color: inherit; }
 
 .new-email-arrow {
   color: rgba(240,237,232,0.5);
+}
+
+/* ============================
+   NEW HEADER — variantes 2D y UXUI (fondo blanco)
+   ============================ */
+.new-header.light {
+  background: #ffffff;
+}
+
+.new-header.light .new-tagline {
+  color: #7c6fd0;
+}
+
+.new-header.light .new-hero-name .name-light {
+  color: #0e0e0e;
+}
+
+.new-header.light .new-hero-name .name-dim {
+  color: #9090a0;
+}
+
+.new-header.light .new-bio-text {
+  color: rgba(14,14,14,0.65);
+}
+
+.new-header.light .new-email-label {
+  color: rgba(14,14,14,0.5);
+}
+
+.new-header.light .new-email-link {
+  color: #0e0e0e;
+}
+
+.new-header.light .new-email-arrow {
+  color: rgba(14,14,14,0.5);
+}
+
+.new-header.light .artstation-btn {
+  color: #0e0e0e;
+  border-color: rgba(14,14,14,0.25);
+}
+
+.new-header.light .artstation-btn:hover {
+  border-color: #7c6fd0;
+  color: #7c6fd0;
 }
