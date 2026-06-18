@@ -2,7 +2,7 @@
    VARIABLES & RESET
    ============================ */
 :root {
-  --dark-bg: #0a0a0f;
+  --dark-bg: #090A0D;
   --light-bg: #ffffff;
   --text-dark: #0e0e0e;
   --text-light: #f0ede8;
@@ -33,9 +33,9 @@ a { text-decoration: none; color: inherit; }
   background-repeat: no-repeat;
 }
 
-/* 3D background at 100% size */
+/* 3D background at 80% size */
 #section-3d {
-  background-size: 100%;
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
 }
@@ -128,8 +128,6 @@ a { text-decoration: none; color: inherit; }
   background: rgba(0,0,0,0.04);
   border-color: rgba(0,0,0,0.14);
 }
-
-.section-2d-only { background: transparent; color: var(--text-dark); }
 
 /* Sliding indicator */
 .nav-pills .slider {
@@ -473,4 +471,135 @@ a { text-decoration: none; color: inherit; }
   .artstation-link { display: none; }
 
   .prototype-btn-wrapper { bottom: 5%; left: 60%; }
+}
+
+/* ============================
+   NEW HEADER — 3D
+   ============================ */
+.new-header {
+  width: 100%;
+  padding: 2rem 70px 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 618px;
+}
+
+.new-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.new-tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: #7c6fd0;
+  text-transform: uppercase;
+}
+
+.new-tagline-line {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: #7c6fd0;
+}
+
+.artstation-btn {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-light);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 100px;
+  padding: 0.5rem 1.2rem;
+  transition: border-color 0.2s, opacity 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.artstation-btn:hover {
+  border-color: rgba(255,255,255,0.5);
+  opacity: 0.9;
+}
+
+.new-header-content {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+}
+
+.new-header-left {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.new-header-right {
+  flex: 1;
+}
+
+.new-hero-name {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.name-light {
+  color: #f0ede8;
+}
+
+.name-dim {
+  color: #6b6b7a;
+}
+
+.new-bio-text {
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(240,237,232,0.65);
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+.new-email-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+}
+
+.new-email-line {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: #7c6fd0;
+  flex-shrink: 0;
+}
+
+.new-email-label {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(240,237,232,0.5);
+  font-size: 0.72rem;
+}
+
+.new-email-link {
+  color: var(--text-light);
+  font-weight: 400;
+  transition: opacity 0.2s;
+}
+
+.new-email-link:hover { opacity: 0.7; }
+
+.new-email-arrow {
+  color: rgba(240,237,232,0.5);
 }
