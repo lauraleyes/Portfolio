@@ -189,6 +189,18 @@ a { text-decoration: none; color: inherit; }
   background: #7c6fd0;
 }
 
+.new-header.light .nav-pills {
+  background: rgba(124,111,208,0.06);
+  border-color: rgba(124,111,208,0.2);
+}
+
+.new-header.light .nav-pill {
+  color: rgba(14,14,14,0.45);
+}
+
+.new-header.light .nav-pill.nav-active {
+  color: #0e0e0e;
+}
 /* ============================
    HERO NAME & TAGLINE
    ============================ */
