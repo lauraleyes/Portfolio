@@ -22,7 +22,7 @@ a { text-decoration: none; color: inherit; }
 .portfolio-section { display: none; }
 .portfolio-section.active { display: block; }
 .section-dark { background: var(--dark-bg); color: var(--text-light); }
-.section-light { background: transparent; color: var(--text-dark); }
+.section-light { background: var(--light-bg); color: var(--text-dark); }
 
 /* ============================
    BG IMAGE
