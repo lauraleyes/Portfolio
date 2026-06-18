@@ -35,7 +35,7 @@ a { text-decoration: none; color: inherit; }
 
 /* 3D background at 100% size */
 #section-3d {
-  background-size: cover;
+  background-size: 100%;
   background-position: center top;
   background-repeat: no-repeat;
 }
