@@ -269,7 +269,11 @@ a { text-decoration: none; color: inherit; }
   columns: 3;
   column-gap: 6px;
   padding: 6px;
-  margin: 0 5%;
+  margin: 2rem 5% 0;
+}
+
+.images-stack {
+  margin-top: 2rem;
 }
 
 .images-grid .image-item {
