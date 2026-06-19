@@ -490,7 +490,19 @@ a { text-decoration: none; color: inherit; }
   .header-top-bar,
   .header-email-row,
   .footer-bottom-bar { padding: 0.6rem 1.5rem; }
+@media (max-width: 900px) {
+  .section-header { height: auto; }
 
+  .images-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .images-grid {
+    columns: 1;
+  }
+}
   .header-top-row {
     flex-direction: column;
     align-items: flex-start;
