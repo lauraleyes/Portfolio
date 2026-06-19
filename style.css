@@ -118,7 +118,7 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   background: rgba(0,0,0,0.5);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 30px;
+  border-radius: 14px;
   padding: 6px;
   gap: 4px;
   height: 70px;
@@ -257,7 +257,7 @@ a { text-decoration: none; color: inherit; }
    ============================ */
 .images-stack { display: flex; flex-direction: column; gap: 0; }
 .dark-bg { background: transparent; }
-.light-bg { background: var(--light-bg); }
+.light-bg { background: transparent; }
 
 .image-item { overflow: hidden; position: relative; }
 .image-item img { width: 100%; height: auto; display: block; }
@@ -269,11 +269,11 @@ a { text-decoration: none; color: inherit; }
   columns: 3;
   column-gap: 6px;
   padding: 6px;
-  margin: 2rem 5% 0;
+  margin: 4rem 5% 0;
 }
 
 .images-stack {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .images-grid .image-item {
@@ -730,7 +730,7 @@ a { text-decoration: none; color: inherit; }
    NEW HEADER — variantes 2D y UXUI (fondo blanco)
    ============================ */
 .new-header.light {
-  background: transparent;
+  background: #ffffff;
 }
 
 .new-header.light .new-tagline {
@@ -782,4 +782,9 @@ a { text-decoration: none; color: inherit; }
 .new-header + .images-grid,
 .new-header + .images-stack {
   margin-top: 0;
+}
+
+/* Footer — pills arriba, espacio antes del nombre */
+.new-footer .nav-row {
+  margin-bottom: 1.5rem;
 }
