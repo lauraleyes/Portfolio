@@ -496,8 +496,6 @@ a { text-decoration: none; color: inherit; }
 
   .header-right-block { flex: 1; }
 
-  .nav-pills { min-width: unset; width: 90%; }
-
   .nav-row { height: auto; padding: 1.5rem; }
 
   .footer-main.centered { padding: 2rem 1.5rem; }
@@ -505,6 +503,88 @@ a { text-decoration: none; color: inherit; }
   .artstation-link { display: none; }
 
   .prototype-btn-wrapper { bottom: 5%; left: 60%; }
+
+  /* ============================
+     NEW HEADER — mobile
+     ============================ */
+  #section-3d {
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
+  .new-header {
+    height: auto;
+    padding: 1.5rem 1.25rem 0;
+  }
+
+  .new-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .artstation-btn {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .new-tagline {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
+
+  .new-header-content {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .new-header-left {
+    flex: 1;
+    width: 100%;
+  }
+
+  .new-header-right {
+    display: none;
+  }
+
+  .new-hero-name {
+    font-size: clamp(3rem, 16vw, 4.5rem);
+    line-height: 0.9;
+    margin-bottom: 0.75rem;
+  }
+
+  .new-bio-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .new-email-row {
+    flex-wrap: wrap;
+    font-size: 0.72rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Nav pills — mobile */
+  .nav-pills {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .nav-pill {
+    height: 48px;
+    width: 100%;
+    font-size: 0.7rem;
+  }
+
+  .nav-pill.nav-active::after {
+    display: none;
+  }
 }
 
 /* ============================
