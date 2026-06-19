@@ -730,7 +730,7 @@ a { text-decoration: none; color: inherit; }
    NEW HEADER — variantes 2D y UXUI (fondo blanco)
    ============================ */
 .new-header.light {
-  background: #ffffff;
+  background: transparent;
 }
 
 .new-header.light .new-tagline {
