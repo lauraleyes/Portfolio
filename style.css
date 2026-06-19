@@ -118,7 +118,7 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   background: rgba(0,0,0,0.5);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 6px;
   gap: 4px;
   height: 70px;
@@ -269,11 +269,11 @@ a { text-decoration: none; color: inherit; }
   columns: 3;
   column-gap: 6px;
   padding: 6px;
-  margin: 4rem 5% 0;
+  margin: 1.5rem 5% 0;
 }
 
 .images-stack {
-  margin-top: 4rem;
+  margin-top: 1.5rem;
 }
 
 .images-grid .image-item {
@@ -600,10 +600,10 @@ a { text-decoration: none; color: inherit; }
    ============================ */
 .new-header {
   width: 100%;
-  padding: 2rem 70px 0;
+  padding: 2rem 70px 2rem;
   display: flex;
   flex-direction: column;
-  height: 480px;
+  min-height: 480px;
 }
 
 .new-header-top {
@@ -730,7 +730,7 @@ a { text-decoration: none; color: inherit; }
    NEW HEADER — variantes 2D y UXUI (fondo blanco)
    ============================ */
 .new-header.light {
-  background: #ffffff;
+  background: transparent;
 }
 
 .new-header.light .new-tagline {
@@ -775,7 +775,8 @@ a { text-decoration: none; color: inherit; }
    NEW FOOTER — usa mismo estilo que header
    ============================ */
 .new-footer {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  padding-bottom: 2.5rem;
 }
 
 /* Espacio consistente entre header y contenido en las 3 secciones */
@@ -786,5 +787,5 @@ a { text-decoration: none; color: inherit; }
 
 /* Footer — pills arriba, espacio antes del nombre */
 .new-footer .nav-row {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
