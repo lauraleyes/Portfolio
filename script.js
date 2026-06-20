@@ -3,16 +3,19 @@ const sectionMap = { '3d': 'section-3d', '2d': 'section-2d', 'uxui': 'section-ux
 // ============================
 // SECTION SWITCHING
 // ============================
-function switchSection(target) {
+function switchSection(target, scrollTop = true) {
   document.querySelectorAll('.portfolio-section').forEach(s => s.classList.remove('active'));
   const el = document.getElementById(sectionMap[target]);
   if (el) {
     el.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (scrollTop) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
   }
   document.querySelectorAll('.nav-pill').forEach(p => {
     p.classList.toggle('nav-active', p.dataset.target === target);
   });
+  localStorage.setItem('lastSection', target);
 }
 
 document.querySelectorAll('.nav-pill').forEach(pill => {
@@ -117,5 +120,7 @@ if (backToTop) {
 // ============================
 // INIT
 // ============================
-switchSection('3d');
+const savedSection = localStorage.getItem('lastSection');
+const validSection = sectionMap[savedSection] ? savedSection : '3d';
+switchSection(validSection, false);
 initGridLightbox();

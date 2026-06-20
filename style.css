@@ -394,6 +394,7 @@ a { text-decoration: none; color: inherit; }
   left: 79%;
   transform: translateX(-50%);
   width: auto;
+  z-index: 5;
 }
 
 .prototype-btn {
@@ -508,7 +509,7 @@ a { text-decoration: none; color: inherit; }
 
   .artstation-link { display: none; }
 
-  .prototype-btn-wrapper { bottom: -27%; left: 50%; }
+  .prototype-btn-wrapper { position: static; margin: 1.5rem auto 0; display: flex; justify-content: center; left: auto; bottom: auto; }
 
   /* ============================
      NEW HEADER — mobile
