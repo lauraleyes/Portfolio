@@ -403,11 +403,11 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.88rem;
   font-weight: 500;
   font-family: var(--font);
-  color: var(--text-dark);
-  border: 1.5px solid rgba(0,0,0,0.25);
+  color: #e36466;
+  border: 1.5px solid rgba(249,144,145,0.6);
   border-radius: 100px;
   padding: 0.65rem 1.4rem;
-  background: rgba(255,255,255,0.88);
+  background: #fef7f3;
   backdrop-filter: blur(8px);
   transition: background 0.2s, border-color 0.2s, transform 0.15s;
   white-space: nowrap;
@@ -415,13 +415,13 @@ a { text-decoration: none; color: inherit; }
 
 .prototype-btn:hover {
   background: #fff;
-  border-color: rgba(0,0,0,0.45);
+  border-color: #f99091;
   transform: translateY(-2px);
 }
 
 .prototype-btn:active {
   transform: scale(0.97);
-  background: #f0f0f0;
+  background: #fef0ea;
 }
 
 .prototype-arrow { transition: transform 0.2s; }
@@ -508,7 +508,7 @@ a { text-decoration: none; color: inherit; }
 
   .artstation-link { display: none; }
 
-  .prototype-btn-wrapper { bottom: 8%; left: 50%; }
+  .prototype-btn-wrapper { bottom: -27%; left: 50%; }
 
   /* ============================
      NEW HEADER — mobile
