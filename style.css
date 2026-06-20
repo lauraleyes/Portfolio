@@ -519,6 +519,12 @@ a { text-decoration: none; color: inherit; }
     background-position: center top !important;
   }
 
+   #section-2d {
+  background-image: url('images/2D-BG-M.jpg') !important;
+  background-size: 100% auto !important;
+  background-position: center top !important;
+}
+   
   .new-header {
     height: auto;
     padding: 1.5rem 1.25rem 0;
