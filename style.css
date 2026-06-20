@@ -509,7 +509,7 @@ a { text-decoration: none; color: inherit; }
 
   .artstation-link { display: none; }
 
-  .prototype-btn-wrapper { position: static; margin: 1.5rem auto 0; display: flex; justify-content: center; left: auto; bottom: auto; }
+  .prototype-btn-wrapper { position: static; width: 100%; margin: 1.5rem 0 0; display: flex; justify-content: center; left: auto; bottom: auto; transform: none; }
 
   /* ============================
      NEW HEADER — mobile
