@@ -508,7 +508,7 @@ a { text-decoration: none; color: inherit; }
 
   .artstation-link { display: none; }
 
-  .prototype-btn-wrapper { bottom: 5%; left: 60%; }
+  .prototype-btn-wrapper { bottom: 8%; left: 50%; }
 
   /* ============================
      NEW HEADER — mobile
@@ -681,6 +681,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 0.82;
   letter-spacing: -0.01em;
   margin-bottom: 1rem;
+  font-synthesis: none;
 }
 
 .name-light {
@@ -796,4 +797,40 @@ a { text-decoration: none; color: inherit; }
 /* Footer — pills arriba, espacio antes del nombre */
 .new-footer .nav-row {
   margin-bottom: 1rem;
+}
+
+/* ============================
+   BACK TO TOP — solo mobile
+   ============================ */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(124,111,208,0.9);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border: none;
+  backdrop-filter: blur(8px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+  .back-to-top {
+    display: flex;
+  }
 }
