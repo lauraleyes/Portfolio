@@ -11,7 +11,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { font-family: var(--font); -webkit-font-smoothing: antialiased; background: var(--dark-bg); }
 img { display: block; width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
@@ -131,6 +131,7 @@ a { text-decoration: none; color: inherit; }
   z-index: 1;
   font-size: 0.78rem;
   font-weight: 500;
+  line-height: 1.2;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 1rem 1rem;
@@ -147,6 +148,7 @@ a { text-decoration: none; color: inherit; }
   gap: 0.5rem;
   background: transparent;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-pill-icon {
@@ -515,16 +517,23 @@ a { text-decoration: none; color: inherit; }
      NEW HEADER — mobile
      ============================ */
   #section-3d {
-    background-size: 100% auto !important;
+    background-size: cover !important;
     background-position: center top !important;
   }
 
-   #section-2d {
-  background-image: url('images/2D-BG-M.jpg') !important;
-  background-size: 100% auto !important;
-  background-position: center top !important;
-}
-   
+  #section-2d {
+    background-image: url('images/2D-BG-M.jpg') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
+  #section-uxui {
+    background-image: url('images/UXUI-BG-M.webp') !important;
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
+  
   .new-header {
     height: auto;
     padding: 1.5rem 1.25rem 0;
@@ -590,9 +599,12 @@ a { text-decoration: none; color: inherit; }
   }
 
   .nav-pill {
-    height: 48px;
+    min-height: 48px;
+    height: auto;
     width: 100%;
     font-size: 0.7rem;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   .nav-pill.nav-active::after {
