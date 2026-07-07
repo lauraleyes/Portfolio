@@ -298,6 +298,33 @@ a { text-decoration: none; color: inherit; }
   transform: scale(1.05);
 }
 
+.images-grid .image-item.ai-item {
+  position: relative;
+  cursor: default;
+}
+
+.images-grid .image-item.ai-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.images-grid .image-item .ai-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(9, 10, 13, 0.75);
+  color: #f0ede8;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(124, 111, 208, 0.6);
+  pointer-events: none;
+}
+
 /* ============================
    LIGHTBOX
    ============================ */
