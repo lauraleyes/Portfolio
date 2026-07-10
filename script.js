@@ -30,6 +30,7 @@ document.querySelectorAll('.nav-pill').forEach(pill => {
 // ============================
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
+const lightboxVideo = document.getElementById('lightbox-video');
 const lightboxClose = document.getElementById('lightbox-close');
 const lightboxPrev = document.getElementById('lightbox-prev');
 const lightboxNext = document.getElementById('lightbox-next');
@@ -49,6 +50,11 @@ function openLightbox(images, index) {
 function closeLightbox() {
   lightbox.classList.remove('open', 'zoomed');
   document.body.style.overflow = '';
+  lightboxVideo.pause();
+  lightboxVideo.style.display = 'none';
+  lightboxImg.style.display = 'block';
+  lightboxPrev.style.display = '';
+  lightboxNext.style.display = '';
 }
 
 function showPrev() {
@@ -90,12 +96,28 @@ document.addEventListener('keydown', e => {
 
 function initGridLightbox() {
   document.querySelectorAll('.images-grid').forEach(grid => {
-    const items = Array.from(grid.querySelectorAll('.image-item img'));
+    const items = Array.from(grid.querySelectorAll('.image-item:not(.ai-item) img'));
     const srcs = items.map(img => img.src);
     items.forEach((img, i) => {
       img.parentElement.addEventListener('click', () => openLightbox(srcs, i));
     });
+
+    grid.querySelectorAll('.image-item.ai-item video').forEach(video => {
+      video.parentElement.addEventListener('click', () => openVideoLightbox(video.currentSrc || video.src));
+    });
   });
+}
+
+function openVideoLightbox(src) {
+  lightboxImg.style.display = 'none';
+  lightboxPrev.style.display = 'none';
+  lightboxNext.style.display = 'none';
+  lightboxVideo.style.display = 'block';
+  lightboxVideo.src = src;
+  lightboxVideo.currentTime = 0;
+  lightboxVideo.play();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 // ============================
